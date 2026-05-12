@@ -37,7 +37,7 @@ A Flask-based weather monitoring application that tracks the 7-day forecast for 
 - `templates/index.html`: Dashboard template.
 - `instance/weather.db`: SQLite database (auto-generated).
 
-##alur program
+## Alur Program
 - Grab data dari api https://api.open-meteo.com/v1/forecast
 - data di simpan di database sqlite dengan struktur table dibawah ini
 id INTEGER NOT NULL, 
