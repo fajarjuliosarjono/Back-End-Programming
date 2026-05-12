@@ -41,7 +41,7 @@ A Flask-based weather monitoring application that tracks the 7-day forecast for 
 - Grab data dari api https://api.open-meteo.com/v1/forecast
 - Untuk dokumentasi mengenai pengambilan lokasi dan parameter lain pada api open-meteo bisa di lihat disini https://open-meteo.com/en/docs
 - data di simpan di database sqlite dengan struktur table dibawah ini
-      ``` id INTEGER NOT NULL, 
+  ``` id INTEGER NOT NULL, 
       date DATE NOT NULL, 
       temp_min FLOAT NOT NULL, 
       temp_max FLOAT NOT NULL, 
