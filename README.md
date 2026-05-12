@@ -50,13 +50,16 @@ A Flask-based weather monitoring application that tracks the 7-day forecast for 
 	PRIMARY KEY (id), 
 	UNIQUE (date)
    ```
+
 - untuk parameter mendapatkan wilayah jakarta menggunakan parameter berikut ini : 
-       ```
+
+      ```
        "latitude": -6.2088,
         "longitude": 106.8456,
         "daily": ["weathercode", "temperature_2m_max", "temperature_2m_min", "precipitation_sum"],
         "timezone": "Asia/Bangkok"
         ```
+
 - Web di tampilkan dengan flask pada python
 
 # Back-End-Programming
