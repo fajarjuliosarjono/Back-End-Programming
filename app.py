@@ -98,4 +98,4 @@ if __name__ == '__main__':
             # We can't really call the route directly easily here without a request context
             # but we can call the logic. I'll just let the user click update or trigger it.
             pass 
-    app.run(debug=True, port=5001)
+    app.run(host='0.0.0.0', debug=True, port=5001)
