@@ -40,7 +40,7 @@ A Flask-based weather monitoring application that tracks the 7-day forecast for 
 ## Alur Program
 - Grab data dari api https://api.open-meteo.com/v1/forecast
 - data di simpan di database sqlite dengan struktur table dibawah ini
-id INTEGER NOT NULL, 
+``` id INTEGER NOT NULL, 
 	date DATE NOT NULL, 
 	temp_min FLOAT NOT NULL, 
 	temp_max FLOAT NOT NULL, 
@@ -48,12 +48,12 @@ id INTEGER NOT NULL,
 	precipitation FLOAT NOT NULL, 
 	created_at DATETIME, 
 	PRIMARY KEY (id), 
-	UNIQUE (date)
+	UNIQUE (date) ```
 - untuk parameter mendapatkan wilayah jakarta menggunakan parameter berikut ini : 
-        "latitude": -6.2088,
+       ``` "latitude": -6.2088,
         "longitude": 106.8456,
         "daily": ["weathercode", "temperature_2m_max", "temperature_2m_min", "precipitation_sum"],
-        "timezone": "Asia/Bangkok"
+        "timezone": "Asia/Bangkok" ```
 - Web di tampilkan dengan flask pada python
 
 # Back-End-Programming
