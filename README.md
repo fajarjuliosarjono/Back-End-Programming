@@ -1,47 +1,47 @@
-# Weather Monitoring Dashboard
+# Dashboard Pemantauan Cuaca
 
-A Flask-based weather monitoring application that tracks the 7-day forecast for Jakarta and stores it in a SQLite database.
+Aplikasi pemantauan cuaca berbasis Flask yang melacak prakiraan cuaca 7 hari untuk wilayah Jakarta dan menyimpannya ke dalam database SQLite.
 
-## Features
-- **Weekly Monitoring**: Automatically fetches 7-day forecast from Open-Meteo API.
-- **SQLite Integration**: Persists weather data locally.
-- **Modern UI**: Premium design with glassmorphism and dark mode.
-- **Responsive**: Works on desktop and mobile devices.
+## Fitur Utama
+- **Pemantauan Mingguan**: Mengambil data prakiraan cuaca 7 hari secara otomatis dari Open-Meteo API.
+- **Integrasi SQLite**: Menyimpan data cuaca secara lokal untuk akses cepat.
+- **Antarmuka Modern**: Desain premium dengan gaya glassmorphism dan mode gelap.
+- **Responsif**: Dapat diakses dengan baik melalui perangkat desktop maupun mobile.
 
-## Setup Instructions
+## Instruksi Pengaturan
 
-1. **Create and activate virtual environment**:
+1. **Buat dan aktifkan virtual environment**:
    ```bash
    python3 -m venv venv
    source venv/bin/activate
    ```
 
-2. **Install dependencies**:
+2. **Instal dependensi**:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Run the application**:
+3. **Jalankan aplikasi**:
    ```bash
    python app.py
    ```
 
-3. **Access the dashboard**:
-   Open your browser and go to `http://127.0.0.1:5001`.
-   Click the **Refresh Data** button to fetch the initial weather data.
+4. **Akses Dashboard**:
+   Buka browser Anda dan buka `http://127.0.0.1:5001`.
+   Klik tombol **Refresh Data** untuk mengambil data cuaca terbaru.
 
-## Project Structure
-- `app.py`: Main application logic and routes.
-- `models.py`: Database schema definition.
-- `static/css/style.css`: UI styling.
-- `templates/index.html`: Dashboard template.
-- `instance/weather.db`: SQLite database (auto-generated).
+## Struktur Proyek
+- `app.py`: Logika utama aplikasi dan rute (routes).
+- `models.py`: Definisi skema database (ORM).
+- `static/css/style.css`: Styling antarmuka.
+- `templates/index.html`: Template dashboard.
+- `instance/weather.db`: Database SQLite (dibuat otomatis).
 
-## Program Flow
+## Alur Program
 
-1. **Data Fetching**: The application retrieves weather data from the [Open-Meteo API](https://api.open-meteo.com/v1/forecast).
-2. **API Specification**: Detailed documentation for location parameters and other API features can be found at [Open-Meteo Docs](https://open-meteo.com/en/docs).
-3. **Database Storage**: Fetched data is stored in a SQLite database with the following schema:
+1. **Pengambilan Data**: Aplikasi mengambil data cuaca dari [Open-Meteo API](https://api.open-meteo.com/v1/forecast).
+2. **Spesifikasi API**: Dokumentasi detail mengenai parameter lokasi dan fitur API lainnya dapat ditemukan di [Dokumentasi Open-Meteo](https://open-meteo.com/en/docs).
+3. **Penyimpanan Database**: Data yang diambil disimpan dalam database SQLite dengan skema berikut:
 
    ```sql
    CREATE TABLE weather_forecast (
@@ -55,13 +55,13 @@ A Flask-based weather monitoring application that tracks the 7-day forecast for 
    );
    ```
 
-4. **Jakarta Location Configuration**: To track Jakarta, the following parameters are used:
+4. **Konfigurasi Lokasi Jakarta**: Untuk melacak Jakarta, parameter berikut digunakan:
    - **Latitude**: -6.2088
    - **Longitude**: 106.8456
-   - **Daily Data**: `weathercode`, `temperature_2m_max`, `temperature_2m_min`, `precipitation_sum`
+   - **Data Harian**: `weathercode`, `temperature_2m_max`, `temperature_2m_min`, `precipitation_sum`
    - **Timezone**: `Asia/Bangkok`
 
-5. **Web Interface**: The dashboard is rendered using Python's Flask framework.
+5. **Antarmuka Web**: Dashboard ditampilkan menggunakan framework Flask pada Python.
 
 ---
-*Created for Back-End Programming course.*
+*Dibuat untuk tugas mata kuliah Pemrograman Back-End.*
