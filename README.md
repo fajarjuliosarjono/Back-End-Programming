@@ -37,30 +37,31 @@ A Flask-based weather monitoring application that tracks the 7-day forecast for 
 - `templates/index.html`: Dashboard template.
 - `instance/weather.db`: SQLite database (auto-generated).
 
-## Alur Program
-- Grab data dari api https://api.open-meteo.com/v1/forecast
-- Untuk dokumentasi mengenai pengambilan lokasi dan parameter lain pada api open-meteo bisa di lihat disini https://open-meteo.com/en/docs
-- data di simpan di database sqlite dengan struktur table dibawah ini
-  ``` id INTEGER NOT NULL, 
-      date DATE NOT NULL, 
-      temp_min FLOAT NOT NULL, 
-      temp_max FLOAT NOT NULL, 
-      condition_code INTEGER NOT NULL, 
-      precipitation FLOAT NOT NULL, 
-      created_at DATETIME, 
-      PRIMARY KEY (id), 
-      UNIQUE (date)
-      
-- untuk parameter mendapatkan wilayah jakarta menggunakan parameter berikut ini : 
-      
-       "latitude": -6.2088,
-        "longitude": 106.8456,
-        "daily": ["weathercode", "temperature_2m_max", "temperature_2m_min", "precipitation_sum"],
-        "timezone": "Asia/Bangkok"
-      
+## Program Flow
 
-- Web di tampilkan dengan flask pada python
+1. **Data Fetching**: The application retrieves weather data from the [Open-Meteo API](https://api.open-meteo.com/v1/forecast).
+2. **API Specification**: Detailed documentation for location parameters and other API features can be found at [Open-Meteo Docs](https://open-meteo.com/en/docs).
+3. **Database Storage**: Fetched data is stored in a SQLite database with the following schema:
 
-# Back-End-Programming
+   ```sql
+   CREATE TABLE weather_forecast (
+       id INTEGER NOT NULL PRIMARY KEY, 
+       date DATE NOT NULL UNIQUE, 
+       temp_min FLOAT NOT NULL, 
+       temp_max FLOAT NOT NULL, 
+       condition_code INTEGER NOT NULL, 
+       precipitation FLOAT NOT NULL, 
+       created_at DATETIME
+   );
+   ```
 
+4. **Jakarta Location Configuration**: To track Jakarta, the following parameters are used:
+   - **Latitude**: -6.2088
+   - **Longitude**: 106.8456
+   - **Daily Data**: `weathercode`, `temperature_2m_max`, `temperature_2m_min`, `precipitation_sum`
+   - **Timezone**: `Asia/Bangkok`
 
+5. **Web Interface**: The dashboard is rendered using Python's Flask framework.
+
+---
+*Created for Back-End Programming course.*
